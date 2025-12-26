@@ -1,5 +1,5 @@
 <?php
-session_start();
+       session_start();
 
        $host = "webpractice-server.mysql.database.azure.com";
        $username = "brksyjredx";
@@ -7,32 +7,36 @@ session_start();
        $database = "webpractice-database";
        $conn = new mysqli($host, $username, $password, $database);
 
+       if (!$conn) {                                             
+           die("Connection failed: " . mysqli_connect_error());     
+       }
    
-        if ($conn->connect_error){
-           die("error" . $conn->connect_error);
-        }else{
-           echo ("connected");
-        }
-   
-       $User = $_POST["username"];
-       $Password = $_POST["password"];
 
-       $Input_user = mysqli_real_escape_string($conn, $User);
-       $Input_pass = mysqli_real_escape_string($conn, $Password);
+    $Input_user = $_POST['username'];
+    $Input_pass = $_POST['password'];
 
-       $sql = "SELECT * FROM `acount` WHERE username = '$Input_user' and password = '$Input_pass'";
+    $sql = "SELECT * FROM `acount` WHERE username = '$Input_user' and password = '$Input_pass'";
 
-      
-       $result = mysqli_query($conn, $sql);
-       ini_set('display_errors', '0');
-       $count = mysqli_num_rows($result);
-   
-        if($count == 1){
-           $_SESSION['username'] = $User;
+    $result = mysqli_query($conn, $sql);
+    $count = mysqli_num_rows($result);
+    while ($data = mysqli_fetch_array($result)){
+         $user_id = $data['Id'];
+         $user_name = $data['username'];
+         $user_password = $data['password'];
+    }
+
+    if($count == 1){
+           $_SESSION['username'] = $user_id;
            $_SESSION['Id'] = 1; 
            header('Location: index.php');
-        } else{
+    }else{
            header('Location: login.html');
-        }
+    }
+
+         $conn -> close();
+}
+
+
+
 ?>
 
