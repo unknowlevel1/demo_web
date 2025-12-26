@@ -4,7 +4,7 @@
      $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
      
      
-     $conn = mysqli_connect("localhost", "username", "password", "demowebs");
+     $conn = mysqli_connect("localhost", "username", "password","webpractice-database");
      
      $username = mysqli_real_escape_string($conn, $username);
      $password = mysqli_real_escape_string($conn, $password);
