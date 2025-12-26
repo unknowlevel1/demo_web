@@ -3,8 +3,8 @@
      $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
      $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
      
-     
-     $conn = mysqli_connect("webpractice-server.mysql.database.azure.com", "brksyjredx", "SeLfJTxN9ki2W$FY","webpractice-database");
+
+     $conn = mysqli_connect("websdemo.mysql.database.azure.com", "zztimdbvxt", "sensen07@","websdemodata");
      
      $username = mysqli_real_escape_string($conn, $username);
      $password = mysqli_real_escape_string($conn, $password);
