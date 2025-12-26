@@ -15,11 +15,12 @@ session_start();
         }
    
        $User = $_POST["username"];
-       $Password = $_POST["Password"];
+       $Password = $_POST["password"];
+
        $Input_user = mysqli_real_escape_string($conn, $User);
        $Input_pass = mysqli_real_escape_string($conn, $Password);
 
-       $sql = "SELECT * FROM `account` WHERE username = '$Input_user' and password = '$Input_pass'";
+       $sql = "SELECT * FROM `acount` WHERE username = '$Input_user' and password = '$Input_pass'";
 
       
        $result = mysqli_query($conn, $sql);
