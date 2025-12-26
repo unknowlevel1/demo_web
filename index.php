@@ -8,10 +8,10 @@
 ?>
 <?php
 
-    $host = "";
-    $username = "";
-    $password = "";
-    $database = "";
+    $host = "webpractice-server.mysql.database.azure.com";
+    $username = "brksyjredx";
+    $password = "SeLfJTxN9ki2W$FY";
+    $database = "webpractice-database";
 
 
     $conn = new mysqli($host, $username, $password, $database);
