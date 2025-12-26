@@ -16,7 +16,7 @@
       }
       
       if (mysqli_query($conn,
-        'CREATE TABLE account (`User` VARCHAR(50) NOT NULL  ,`Password` VARCHAR(50) NOT NULL ,`id INT(30) NOT NULL`PRIMARY KEY (`User`));
+        'CREATE TABLE acount (`username` VARCHAR(50) NOT NULL  ,`password` VARCHAR(50) NOT NULL ,`Id INT(30) NOT NULL`PRIMARY KEY (`User`));
         '
       )) {
         printf("Table created\n");
