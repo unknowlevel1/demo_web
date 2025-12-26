@@ -4,7 +4,7 @@
      $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
      
      
-     $conn = mysqli_connect("localhost", "username", "password","webpractice-database");
+     $conn = mysqli_connect("webpractice-server.mysql.database.azure.com", "brksyjredx", "SeLfJTxN9ki2W$FY","webpractice-database");
      
      $username = mysqli_real_escape_string($conn, $username);
      $password = mysqli_real_escape_string($conn, $password);
@@ -15,5 +15,8 @@
      
      session_start();
      session_regenerate_id(true);
-    
+
+
+
+
 ?>
