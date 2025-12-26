@@ -1,14 +1,14 @@
 <?php
-       session_start();
+session_start();
 
        $host = "webpractice-server.mysql.database.azure.com";
        $username = "brksyjredx";
        $password = "SeLfJTxN9ki2W$FY";
        $database = "webpractice-database";
+       $conn = new mysqli($host, $username, $password, $database);
 
-        $conn = new mysqli($host, $username, $password, $database);
    
-        if ($conn->connect_error) {
+        if ($conn->connect_error){
            die("error" . $conn->connect_error);
         }else{
            echo ("connected");
@@ -16,12 +16,8 @@
    
        $User = $_POST["username"];
        $Password = $_POST["Password"];
-
-
        $Input_user = mysqli_real_escape_string($conn, $User);
        $Input_pass = mysqli_real_escape_string($conn, $Password);
-
-
 
        $sql = "SELECT * FROM `account` WHERE username = '$Input_user' and password = '$Input_pass'";
 
@@ -31,15 +27,11 @@
        $count = mysqli_num_rows($result);
    
         if($count == 1){
-   
            $_SESSION['username'] = $User;
-           $_SESSION['id'] = 1; 
+           $_SESSION['Id'] = 1; 
            header('Location: index.php');
-   
         } else{
-   
            header('Location: login.html');
-   
         }
 ?>
 
