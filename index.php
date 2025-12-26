@@ -8,11 +8,10 @@
 ?>
 <?php
 
-    $host = "webpractice-server.mysql.database.azure.com";
-    $username = "brksyjredx";
-    $password = "SeLfJTxN9ki2W$FY";
-    $database = "webpractice-database";
-
+    $host = "websdemo.mysql.database.azure.com";
+    $username = "zztimdbvxt";
+    $password = "sensen07@";
+    $database = "websdemodata";
 
     $conn = new mysqli($host, $username, $password, $database);
     if ($conn->connect_error) {
