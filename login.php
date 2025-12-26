@@ -27,7 +27,7 @@
 
     if($count == 1){
            $_SESSION['username'] = $user_id;
-           $_SESSION['Id'] = 1; 
+           $_SESSION['Id'] = $user_id; 
            header('Location: index.php');
     }else{
            header('Location: login.html');
