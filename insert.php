@@ -1,11 +1,11 @@
 <?php
 
-   $host = '';
-   $username = '';
-   $password = '';
-   $db_name = '';
+   $host = 'webpractice-server.mysql.database.azure.com';
+   $username = 'brksyjredx';
+   $password = 'SeLfJTxN9ki2W$FY';
+   $db_name = 'webpractice-database';
    
-   
+      
    $conn = mysqli_init();
    mysqli_ssl_set($conn, NULL, NULL,"D:\study\DigiCertGlobalRootCA.crt.pem",NULL,NULL);
    mysqli_real_connect($conn, $host, $username, $password, $db_name, 3306, MYSQLI_CLIENT_SSL);
@@ -17,7 +17,7 @@
    $Password= '';
    $id='';
    
-   if($stmt = mysqli_prepare($conn, "INSERT INTO account (User, Password, id) VALUES (? , ? , ?)")){
+   if($stmt = mysqli_prepare($conn, "INSERT INTO account (Id,username, password) VALUES (? , ? , ?)")){
        mysqli_stmt_bind_param($stmt, 'ssd',$User,$Password,$id);
        mysqli_stmt_execute($stmt);
        printf("Insert: Affected %d rows\n", mysqli_stmt_affected_rows($stmt));
