@@ -5,28 +5,36 @@ session_start();
     $username = "brksyjredx";
     $password = "SeLfJTxN9ki2W$FY";
     $database = "webpractice-database";
-    $conn = new mysqli($host, $username, $password, $database);
+    //$conn = new mysqli($host, $username, $password, $database);
+    $conn = mysqli_connect($host,$user,$password,$database);
 
-    if (!$conn) {                                             
-           die("Connection failed: " . mysqli_connect_error());     
+    if (!$conn) {                                            
+       die("Connection failed: " . mysqli_connect_error());     
     }
    
-    $Input_user = $_POST['username'];
-    $Input_pass = $_POST['password'];
+    $user = $_POST['username'];
+    $password = $_POST['password'];
+
+    $Input_user = mysqli_real_escape_string($conn, $user);
+    $Input_pass = mysqli_real_escape_string($conn, $password);
 
     $sql = "SELECT * FROM `acount` WHERE username = '$Input_user' and password = '$Input_pass'";
 
     $result = mysqli_query($conn, $sql);
     $count = mysqli_num_rows($result);
+    ini_set('display_errors', '0');
 
-    while ($data = mysqli_fetch_array($result)){
+    while($data = mysqli_fetch_array($result)){
+        
          $user_id = $data['Id'];
          $user_name = $data['username'];
          $user_password = $data['password'];
+        
     }
 
     if($count == 1){
-           $_SESSION['username'] = $user_id;
+           $_SESSION['username'] = $user_name;
+           $_SESSION['password'] = $user_password;
            $_SESSION['Id'] = $user_id; 
            header('Location: index.php');
     }else{
