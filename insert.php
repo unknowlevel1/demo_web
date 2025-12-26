@@ -17,7 +17,7 @@
    $Password= '';
    $id='';
    
-   if($stmt = mysqli_prepare($conn, "INSERT INTO account (Id,username, password) VALUES (? , ? , ?)")){
+   if($stmt = mysqli_prepare($conn, "INSERT INTO acount (Id,username, password) VALUES (? , ? , ?)")){
        mysqli_stmt_bind_param($stmt, 'ssd',$User,$Password,$id);
        mysqli_stmt_execute($stmt);
        printf("Insert: Affected %d rows\n", mysqli_stmt_affected_rows($stmt));
