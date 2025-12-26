@@ -1,12 +1,13 @@
 <?php
 session_start();
 
-    $host = "webpractice-server.mysql.database.azure.com";
-    $username = "brksyjredx";
-    $password = "SeLfJTxN9ki2W$FY";
-    $database = "webpractice-database";
-    //$conn = new mysqli($host, $username, $password, $database);
-    $conn = mysqli_connect($host,$user,$password,$database);
+    $host = "websdemo.mysql.database.azure.com";
+    $username = "zztimdbvxt";
+    $password = "sensen07@";
+    $database = "websdemodata";
+
+    $conn = new mysqli($host, $username, $password, $database);
+    //$conn = mysqli_connect($host,$user,$password,$database);
 
     if (!$conn) {                                            
        die("Connection failed: " . mysqli_connect_error());     
@@ -23,19 +24,13 @@ session_start();
     $result = mysqli_query($conn, $sql);
     $count = mysqli_num_rows($result);
     ini_set('display_errors', '0');
-
     while($data = mysqli_fetch_array($result)){
-        
-         $user_id = $data['Id'];
          $user_name = $data['username'];
          $user_password = $data['password'];
-        
     }
-
     if($count == 1){
            $_SESSION['username'] = $user_name;
            $_SESSION['password'] = $user_password;
-           $_SESSION['Id'] = $user_id; 
            header('Location: index.php');
     }else{
            header('Location: login.html');
