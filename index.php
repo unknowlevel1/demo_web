@@ -11,7 +11,7 @@
     $host = "arrr-server.mysql.database.azure.com";
     $username = "asfegqtrwz";
     $password = "sensen07@";
-    $database = "websdemodata";
+    $database = "array-database";
 
     $conn = new mysqli($host, $username, $password, $database);
     if ($conn->connect_error) {
