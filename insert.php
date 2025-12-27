@@ -1,10 +1,11 @@
 <?php
 
 
-    $host = "websdemo.mysql.database.azure.com";
-    $username = "zztimdbvxt";
+    $host = "arrr-server.mysql.database.azure.com";
+    $username = "asfegqtrwz";
     $password = "sensen07@";
-    $db_name = "websdemodata";
+    $db_name = "array-database";
+
       
    $conn = mysqli_init();
    mysqli_ssl_set($conn, NULL, NULL,"c:\cert\DigiCertGlobalRootG2.crt.pem",NULL,NULL);
