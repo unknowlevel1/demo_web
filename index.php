@@ -8,8 +8,8 @@
 ?>
 <?php
 
-    $host = "websdemo.mysql.database.azure.com";
-    $username = "zztimdbvxt";
+    $host = "arrr-server.mysql.database.azure.com";
+    $username = "asfegqtrwz";
     $password = "sensen07@";
     $database = "websdemodata";
 
