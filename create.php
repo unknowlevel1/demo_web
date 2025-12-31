@@ -1,10 +1,10 @@
 <?php
 
    //echo $username = '';
-    $host = "arrr-server.mysql.database.azure.com";
-    $username = "asfegqtrwz";
+    $host = "web-ru-server.mysql.database.azure.com";
+    $username = "mglrhyfmjy";
     $password = "sensen07@";
-    $database = "array-database";
+    $database = "web-ru-database";
       
      $conn = mysqli_init();
 

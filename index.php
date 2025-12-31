@@ -8,15 +8,24 @@
 ?>
 <?php
 
-    $host = "arrr-server.mysql.database.azure.com";
-    $username = "asfegqtrwz";
+    $host = "web-ru-server.mysql.database.azure.com";
+    $username = "mglrhyfmjy";
     $password = "sensen07@";
-    $database = "array-database";
+    $database = "web-ru-database";
 
-    $conn = new mysqli($host, $username, $password, $database);
+    $conn = new mysqli($host, $username, $password, $database ,'3306');
     if ($conn->connect_error) {
         die("error " . $conn->connect_error);
     }
+
+    $conn = mysqli_init();
+    mysqli_ssl_set($conn,NULL,NULL, "C:/cert/DigiCertGlobalRootG2.crt.pem", NULL, NULL);
+    mysqli_real_connect($conn, 'web-ru-server.mysql.database.azure.com', 'mglrhyfmjy', 'sensen@', 'web-ru-database', 3306, MYSQLI_CLIENT_SSL);
+    if (mysqli_connect_errno()) {
+    die('Failed to connect to MySQL: '.mysqli_connect_error());
+    }
+
+
 ?>
 
 <!DOCTYPE html>
